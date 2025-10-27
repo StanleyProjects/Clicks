@@ -28,11 +28,13 @@ val gh = GitHub.Repository(
 repositories {
     google()
     mavenCentral()
+    maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
 plugins {
     id("com.android.library")
     id("kotlin-android")
+    id("org.jetbrains.compose") version Version.compose
 }
 
 fun BaseVariant.getVersion(): String {
@@ -148,6 +150,10 @@ android {
         }
     }
 
+    buildFeatures.compose = true
+
+    composeOptions.kotlinCompilerExtensionVersion = "1.5.15"
+
     fun onVariant(variant: LibraryVariant) {
         val supported = setOf("unstableDebug")
         if (!supported.contains(variant.name)) {
@@ -182,4 +188,8 @@ android {
     libraryVariants.all {
         onVariant(variant = this)
     }
+}
+
+dependencies {
+    implementation(compose.foundation)
 }
