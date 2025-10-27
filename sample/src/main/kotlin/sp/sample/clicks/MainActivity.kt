@@ -27,6 +27,7 @@ import androidx.compose.ui.node.DrawModifierNode
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
 import sp.ax.clicks.onClick
+import sp.ax.clicks.onLongClick
 
 internal class MainActivity : ComponentActivity() {
     private class FooNode(private val interactionSource: InteractionSource) : Modifier.Node(), DrawModifierNode {
@@ -105,6 +106,16 @@ internal class MainActivity : ComponentActivity() {
                             )
                             .wrapContentSize(),
                         text = "baz",
+                    )
+                    BasicText(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(48.dp)
+                            .onLongClick {
+                                showToast("long click")
+                            }
+                            .wrapContentSize(),
+                        text = "long click",
                     )
                 }
             }
