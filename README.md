@@ -5,7 +5,7 @@ Jetpack Compose clickable extensions.
 
 ## Unstable
 
-> GitHub [0.1.0u-SNAPSHOT](https://github.com/StanleyProjects/Clicks/releases/tag/0.1.0u-SNAPSHOT) release
+> GitHub [0.1.1u-SNAPSHOT](https://github.com/StanleyProjects/Clicks/releases/tag/0.1.1u-SNAPSHOT) release
 >
 > Maven [metadata](https://central.sonatype.com/repository/maven-snapshots/com/github/kepocnhh/Clicks/maven-metadata.xml)
 
@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.kepocnhh:Clicks:0.1.0u-SNAPSHOT")
+    implementation("com.github.kepocnhh:Clicks:0.1.1u-SNAPSHOT")
 }
 ```
 
