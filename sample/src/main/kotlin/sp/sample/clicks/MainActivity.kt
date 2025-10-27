@@ -26,6 +26,7 @@ import androidx.compose.ui.node.DelegatableNode
 import androidx.compose.ui.node.DrawModifierNode
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
+import sp.ax.clicks.clicks
 import sp.ax.clicks.onClick
 import sp.ax.clicks.onLongClick
 
@@ -116,6 +117,21 @@ internal class MainActivity : ComponentActivity() {
                             }
                             .wrapContentSize(),
                         text = "long click",
+                    )
+                    BasicText(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(48.dp)
+                            .clicks(
+                                onClick = {
+                                    showToast("clicks: click")
+                                },
+                                onLongClick = {
+                                    showToast("clicks: long click")
+                                },
+                            )
+                            .wrapContentSize(),
+                        text = "clicks",
                     )
                 }
             }
